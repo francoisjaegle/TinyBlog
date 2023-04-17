@@ -11,6 +11,23 @@ Class {
 	#category : #TinyBlog
 }
 
+{ #category : #'instance creation' }
+TBPost class >> title: aTitle text: aText [
+
+	^ self new
+		title: aTitle;
+		text: aText;
+		yourself
+]
+
+{ #category : #'instance creation' }
+TBPost class >> title: aTitle text: aText category: aCategory [
+
+	^ (self title: aTitle text: aText)
+		category: aCategory 		
+		yourself
+]
+
 { #category : #initalize }
 TBPost class >> unclassifiedTag [
 

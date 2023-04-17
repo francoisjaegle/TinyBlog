@@ -25,4 +25,6 @@ TBPostTest >> testWithouCategoryIsUnclassified [
 		text: 'TinyBlog est un petit machin qui s éxécute en PHARO.'.
 	self assert: post title equals: 'Salut de TinyBlog'.
 	self assert: post text equals: 'TinyBlog est un petit machin qui s éxécute en PHARO.'.
+	self assert: post isUnclassified.
+	self deny: post isVisible
 ]

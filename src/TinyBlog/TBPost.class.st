@@ -73,6 +73,18 @@ TBPost >> initialize [
 	self notVisible 
 ]
 
+{ #category : #testing }
+TBPost >> isUnclassified [	
+
+	^ self category = TBPost unclassifiedTag 
+]
+
+{ #category : #testing }
+TBPost >> isVisible [ 
+
+	^ self visible
+]
+
 { #category : #action }
 TBPost >> notVisible [ 
 

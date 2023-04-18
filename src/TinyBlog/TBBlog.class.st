@@ -11,7 +11,7 @@ Class {
 }
 
 { #category : #initialization }
-TBBlog class >> currentWorld [ 
+TBBlog class >> current [ 
 
 	"Answer the instance of the class"
 	^ uniqueInstance ifNil: [ uniqueInstance := self new ]
@@ -34,4 +34,24 @@ TBBlog >> initialize [
 
 	super initialize.
 	posts := OrderedCollection new.
+]
+
+{ #category : #initialization }
+TBBlog >> removeAllPosts [ 
+
+
+	posts := OrderedCollection new
+]
+
+{ #category : #initialization }
+TBBlog >> size [ 
+
+ ^ posts size 
+]
+
+{ #category : #initialization }
+TBBlog >> writeBlogPost: aPost [
+
+
+posts add: aPost
 ]

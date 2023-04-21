@@ -31,7 +31,23 @@ TBBlogTest >> tearDown [
 TBBlogTest >> testAddBlogPost [ 
 
 	blog writeBlogPost: post.
-	self assert: blog size equals: 2
+	self assert: blog allBlogPosts size equals: 2
+	
+]
+
+{ #category : #action }
+TBBlogTest >> testAllBlogPostsFromCategory [ 
+
+	self assert: (blog allBlogPostsFromCategory: 'First Category')
+	size equals: 1
+	
+]
+
+{ #category : #action }
+TBBlogTest >> testAllVisibleBlogPost [ 
+
+	blog writeBlogPost: post.
+	self assert: blog allVisibleBlogPosts size equals: 1
 	
 ]
 
